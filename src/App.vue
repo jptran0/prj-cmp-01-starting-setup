@@ -1,9 +1,19 @@
 <template>
-  <ul></ul>
+  <ul>
+    <learning-resource
+      v-for="res in storedResources"
+      :key="res.id"
+    ></learning-resource>
+  </ul>
 </template>
 
 <script>
+import LearningResource from './components/learning-resources/LearningResource.vue';
+
 export default {
+  components: {
+    LearningResource,
+  },
   data() {
     return {
       storedResources: [
@@ -16,7 +26,7 @@ export default {
         {
           id: 'google',
           title: 'Google',
-          description: 'Learn to google...',
+          description: 'Learn to google!',
           link: 'https://google.org',
         },
       ],
